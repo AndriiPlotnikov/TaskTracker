@@ -1,0 +1,252 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Task Tracker",
+		"_postman_id": "0b0847ff-e1be-1022-6d76-df0e6eb219ad",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create Group",
+			"request": {
+				"url": "localhost:8080/user/group",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"some group\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create User",
+			"request": {
+				"url": "localhost:8080/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test19\",\n\"password\":\"test\",\n\t\"groupId\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get UserInfo",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/user/info?id=402",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"info"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "402",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test1\",\n\"password\":\"test\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create Task",
+			"request": {
+				"url": "localhost:8080/task",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"authorId\":402,\n\"assigneeId\":402,\n\"description\":\"testing\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add comment",
+			"request": {
+				"url": "localhost:8080/task/comment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"taskId\":353,\n\t\"authorId\":402,\n\"content\":\"My comment 5\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get Task Info",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/task?id=402",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"task"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "402",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"authorId\":252,\n\"assigneeId\":252,\n\"description\":\"testing\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get Tasks",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/tasks?sortOrder=ASC&groupId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "sortOrder",
+							"value": "ASC",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "groupId",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"authorId\":252,\n\"assigneeId\":252,\n\"description\":\"testing\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get UserRanking",
+			"request": {
+				"url": {
+					"raw": "localhost:8081/user?userId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get Report: Users created",
+			"request": {
+				"url": "localhost:8080/report/users",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
