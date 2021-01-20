@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.stream.Collectors;
 
+/**
+ * User related operation controller
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/user")

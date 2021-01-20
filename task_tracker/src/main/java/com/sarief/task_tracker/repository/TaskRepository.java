@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Task repository
+ */
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> getByAssignee_group_id(Long groupId, Sort sort);

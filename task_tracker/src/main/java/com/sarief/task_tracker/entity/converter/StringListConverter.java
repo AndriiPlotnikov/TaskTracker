@@ -10,7 +10,7 @@ import static java.util.Collections.emptyList;
 /**
  * Converter for List to saveable string
  *
- * Couresty of https://stackoverflow.com/a/50448142/5070158
+ * Courtesy of https://stackoverflow.com/a/50448142/5070158
  */
 @Converter
 public class StringListConverter implements AttributeConverter<List<String>, String> {
